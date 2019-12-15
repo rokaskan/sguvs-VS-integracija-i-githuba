@@ -32,5 +32,15 @@ namespace sguvs
         {
             textBox1.BackColor = Color.Azure;
         }
+
+        private void textBox2login_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void prisijungtibtn_Click(object sender, EventArgs e)
+        {
+            textBox2login.Text = "prisijungta";
+        }
     }
 }

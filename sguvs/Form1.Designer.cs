@@ -31,6 +31,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.keistiSpalva = new System.Windows.Forms.Button();
+            this.textBox2login = new System.Windows.Forms.TextBox();
+            this.prisijungtibtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -63,11 +65,31 @@
             this.keistiSpalva.UseVisualStyleBackColor = true;
             this.keistiSpalva.Click += new System.EventHandler(this.keistiSpalva_Click);
             // 
+            // textBox2login
+            // 
+            this.textBox2login.Location = new System.Drawing.Point(536, 274);
+            this.textBox2login.Name = "textBox2login";
+            this.textBox2login.Size = new System.Drawing.Size(100, 20);
+            this.textBox2login.TabIndex = 3;
+            this.textBox2login.TextChanged += new System.EventHandler(this.textBox2login_TextChanged);
+            // 
+            // prisijungtibtn
+            // 
+            this.prisijungtibtn.Location = new System.Drawing.Point(432, 307);
+            this.prisijungtibtn.Name = "prisijungtibtn";
+            this.prisijungtibtn.Size = new System.Drawing.Size(75, 23);
+            this.prisijungtibtn.TabIndex = 4;
+            this.prisijungtibtn.Text = "button2";
+            this.prisijungtibtn.UseVisualStyleBackColor = true;
+            this.prisijungtibtn.Click += new System.EventHandler(this.prisijungtibtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 415);
+            this.Controls.Add(this.prisijungtibtn);
+            this.Controls.Add(this.textBox2login);
             this.Controls.Add(this.keistiSpalva);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -83,6 +105,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button keistiSpalva;
+        private System.Windows.Forms.TextBox textBox2login;
+        private System.Windows.Forms.Button prisijungtibtn;
     }
 }
 
