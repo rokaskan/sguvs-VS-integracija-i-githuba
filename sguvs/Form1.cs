@@ -27,5 +27,10 @@ namespace sguvs
         {
 
         }
+
+        private void keistiSpalva_Click(object sender, EventArgs e)
+        {
+            textBox1.BackColor = Color.Azure;
+        }
     }
 }
