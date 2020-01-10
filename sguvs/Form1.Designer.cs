@@ -1,6 +1,6 @@
 ﻿namespace sguvs
 {
-    partial class Form1
+    partial class loginForm1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,73 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.keistiSpalva = new System.Windows.Forms.Button();
-            this.textBox2login = new System.Windows.Forms.TextBox();
-            this.prisijungtibtn = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm1));
+            this.vartotojoIdTextBox = new System.Windows.Forms.TextBox();
+            this.slaptazodisTextBox = new System.Windows.Forms.TextBox();
+            this.vartotojoVardaslabel = new System.Windows.Forms.Label();
+            this.slaptazodisLabel1 = new System.Windows.Forms.Label();
+            this.prisijungtiBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // vartotojoIdTextBox
             // 
-            this.button1.Location = new System.Drawing.Point(108, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.vartotojoIdTextBox.Location = new System.Drawing.Point(97, 53);
+            this.vartotojoIdTextBox.Name = "vartotojoIdTextBox";
+            this.vartotojoIdTextBox.Size = new System.Drawing.Size(240, 22);
+            this.vartotojoIdTextBox.TabIndex = 0;
             // 
-            // textBox1
+            // slaptazodisTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(336, 70);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 93);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "dasda";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.slaptazodisTextBox.Location = new System.Drawing.Point(97, 115);
+            this.slaptazodisTextBox.Name = "slaptazodisTextBox";
+            this.slaptazodisTextBox.Size = new System.Drawing.Size(240, 22);
+            this.slaptazodisTextBox.TabIndex = 1;
             // 
-            // keistiSpalva
+            // vartotojoVardaslabel
             // 
-            this.keistiSpalva.Location = new System.Drawing.Point(108, 173);
-            this.keistiSpalva.Name = "keistiSpalva";
-            this.keistiSpalva.Size = new System.Drawing.Size(137, 47);
-            this.keistiSpalva.TabIndex = 2;
-            this.keistiSpalva.Text = "button2";
-            this.keistiSpalva.UseVisualStyleBackColor = true;
-            this.keistiSpalva.Click += new System.EventHandler(this.keistiSpalva_Click);
+            this.vartotojoVardaslabel.AutoSize = true;
+            this.vartotojoVardaslabel.Location = new System.Drawing.Point(94, 33);
+            this.vartotojoVardaslabel.Name = "vartotojoVardaslabel";
+            this.vartotojoVardaslabel.Size = new System.Drawing.Size(120, 17);
+            this.vartotojoVardaslabel.TabIndex = 2;
+            this.vartotojoVardaslabel.Text = "Naudotojo vardas";
             // 
-            // textBox2login
+            // slaptazodisLabel1
             // 
-            this.textBox2login.Location = new System.Drawing.Point(536, 274);
-            this.textBox2login.Name = "textBox2login";
-            this.textBox2login.Size = new System.Drawing.Size(100, 20);
-            this.textBox2login.TabIndex = 3;
-            this.textBox2login.TextChanged += new System.EventHandler(this.textBox2login_TextChanged);
+            this.slaptazodisLabel1.AutoSize = true;
+            this.slaptazodisLabel1.Location = new System.Drawing.Point(94, 95);
+            this.slaptazodisLabel1.Name = "slaptazodisLabel1";
+            this.slaptazodisLabel1.Size = new System.Drawing.Size(81, 17);
+            this.slaptazodisLabel1.TabIndex = 3;
+            this.slaptazodisLabel1.Text = "Slaptažodis";
             // 
-            // prisijungtibtn
+            // prisijungtiBtn
             // 
-            this.prisijungtibtn.Location = new System.Drawing.Point(432, 307);
-            this.prisijungtibtn.Name = "prisijungtibtn";
-            this.prisijungtibtn.Size = new System.Drawing.Size(75, 23);
-            this.prisijungtibtn.TabIndex = 4;
-            this.prisijungtibtn.Text = "button2";
-            this.prisijungtibtn.UseVisualStyleBackColor = true;
-            this.prisijungtibtn.Click += new System.EventHandler(this.prisijungtibtn_Click);
+            this.prisijungtiBtn.Location = new System.Drawing.Point(253, 159);
+            this.prisijungtiBtn.Name = "prisijungtiBtn";
+            this.prisijungtiBtn.Size = new System.Drawing.Size(84, 28);
+            this.prisijungtiBtn.TabIndex = 4;
+            this.prisijungtiBtn.Text = "Prisijungti";
+            this.prisijungtiBtn.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // loginForm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 415);
-            this.Controls.Add(this.prisijungtibtn);
-            this.Controls.Add(this.textBox2login);
-            this.Controls.Add(this.keistiSpalva);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(483, 246);
+            this.Controls.Add(this.prisijungtiBtn);
+            this.Controls.Add(this.slaptazodisLabel1);
+            this.Controls.Add(this.vartotojoVardaslabel);
+            this.Controls.Add(this.slaptazodisTextBox);
+            this.Controls.Add(this.vartotojoIdTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "loginForm1";
+            this.Text = "Stiklo namai";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,11 +100,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button keistiSpalva;
-        private System.Windows.Forms.TextBox textBox2login;
-        private System.Windows.Forms.Button prisijungtibtn;
+        private System.Windows.Forms.TextBox vartotojoIdTextBox;
+        private System.Windows.Forms.TextBox slaptazodisTextBox;
+        private System.Windows.Forms.Label vartotojoVardaslabel;
+        private System.Windows.Forms.Label slaptazodisLabel1;
+        private System.Windows.Forms.Button prisijungtiBtn;
     }
 }
 

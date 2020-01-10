@@ -10,37 +10,11 @@ using System.Windows.Forms;
 
 namespace sguvs
 {
-    public partial class Form1 : Form
+    public partial class loginForm1 : Form
     {
-        public Form1()
+        public loginForm1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "RokasKandrotas";
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void keistiSpalva_Click(object sender, EventArgs e)
-        {
-            textBox1.BackColor = Color.Azure;
-        }
-
-        private void textBox2login_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void prisijungtibtn_Click(object sender, EventArgs e)
-        {
-            textBox2login.Text = "prisijungta";
         }
     }
 }
