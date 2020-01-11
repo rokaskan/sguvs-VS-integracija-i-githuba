@@ -39,7 +39,7 @@
             // vartotojoIdTextBox
             // 
             this.vartotojoIdTextBox.Location = new System.Drawing.Point(73, 43);
-            this.vartotojoIdTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vartotojoIdTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.vartotojoIdTextBox.Name = "vartotojoIdTextBox";
             this.vartotojoIdTextBox.Size = new System.Drawing.Size(181, 20);
             this.vartotojoIdTextBox.TabIndex = 0;
@@ -47,7 +47,7 @@
             // slaptazodisTextBox
             // 
             this.slaptazodisTextBox.Location = new System.Drawing.Point(73, 93);
-            this.slaptazodisTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.slaptazodisTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.slaptazodisTextBox.Name = "slaptazodisTextBox";
             this.slaptazodisTextBox.Size = new System.Drawing.Size(181, 20);
             this.slaptazodisTextBox.TabIndex = 1;
@@ -58,9 +58,9 @@
             this.vartotojoVardaslabel.Location = new System.Drawing.Point(70, 27);
             this.vartotojoVardaslabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.vartotojoVardaslabel.Name = "vartotojoVardaslabel";
-            this.vartotojoVardaslabel.Size = new System.Drawing.Size(91, 13);
+            this.vartotojoVardaslabel.Size = new System.Drawing.Size(97, 13);
             this.vartotojoVardaslabel.TabIndex = 2;
-            this.vartotojoVardaslabel.Text = "Naudotojo vardas";
+            this.vartotojoVardaslabel.Text = "Prisijungimo vardas";
             // 
             // slaptazodisLabel1
             // 
@@ -75,7 +75,7 @@
             // prisijungtiBtn
             // 
             this.prisijungtiBtn.Location = new System.Drawing.Point(190, 129);
-            this.prisijungtiBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prisijungtiBtn.Margin = new System.Windows.Forms.Padding(2);
             this.prisijungtiBtn.Name = "prisijungtiBtn";
             this.prisijungtiBtn.Size = new System.Drawing.Size(63, 23);
             this.prisijungtiBtn.TabIndex = 4;
