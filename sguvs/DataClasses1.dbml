@@ -1,21 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StikloNamaiDB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\StikloNamaiDB.mdf;Integrated Security=True" SettingsObjectName="sguvs.Properties.Settings" SettingsPropertyName="StikloNamaiDBConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Uzsakymas" Member="Uzsakymas">
-    <Type Name="Uzsakymas">
-      <Column Name="ID_uzsakymo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_vartotojo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="uzsakymo_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_zaliava" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ilgis" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="plotis" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="kiekis" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="plotas" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="kaina" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="statusas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Uzsakymas_Zaliava" Member="Zaliavas" ThisKey="ID_zaliava" OtherKey="ID_zaliava" Type="Zaliava" />
-      <Association Name="Vartotojas_Uzsakymas" Member="Vartotojas" ThisKey="ID_vartotojo" OtherKey="ID_vartotojo" Type="Vartotojas" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Vartotojas" Member="Vartotojas">
     <Type Name="Vartotojas">
       <Column Name="ID_vartotojo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -30,7 +14,7 @@
       <Column Name="adresas" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="miestas" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="istrintas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Vartotojas_Uzsakymas" Member="Uzsakymas" ThisKey="ID_vartotojo" OtherKey="ID_vartotojo" Type="Uzsakymas" />
+      <Association Name="Vartotojas_Uzsakyma" Member="Uzsakymas1" ThisKey="ID_vartotojo" OtherKey="ID_vartotojo" Type="Uzsakyma" />
     </Type>
   </Table>
   <Table Name="dbo.Zaliava" Member="Zaliavas">
@@ -43,7 +27,23 @@
       <Column Name="turimas_kiekis" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="kaina" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="istrintas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Uzsakymas_Zaliava" Member="Uzsakymas" ThisKey="ID_zaliava" OtherKey="ID_zaliava" Type="Uzsakymas" IsForeignKey="true" />
+      <Association Name="Uzsakyma_Zaliava" Member="Uzsakyma" ThisKey="ID_zaliava" OtherKey="ID_uzsakymo" Type="Uzsakyma" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Uzsakymas" Member="Uzsakymas1">
+    <Type Name="Uzsakyma">
+      <Column Name="ID_uzsakymo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_vartotojo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="uzsakymo_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="zaliava_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ilgis" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="plotis" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="kiekis" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="plotas" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="kaina" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="statusas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Uzsakyma_Zaliava" Member="Zaliava" ThisKey="ID_uzsakymo" OtherKey="ID_zaliava" Type="Zaliava" Cardinality="One" />
+      <Association Name="Vartotojas_Uzsakyma" Member="Vartotojas" ThisKey="ID_vartotojo" OtherKey="ID_vartotojo" Type="Vartotojas" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

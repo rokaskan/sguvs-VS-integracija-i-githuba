@@ -39,5 +39,10 @@ namespace sguvs
             // we will close the application
             Application.Exit();
         }
+
+        private void loginForm1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

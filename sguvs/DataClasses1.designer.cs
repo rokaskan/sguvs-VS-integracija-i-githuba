@@ -30,15 +30,15 @@ namespace sguvs
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertUzsakymas(Uzsakymas instance);
-    partial void UpdateUzsakymas(Uzsakymas instance);
-    partial void DeleteUzsakymas(Uzsakymas instance);
     partial void InsertVartotojas(Vartotojas instance);
     partial void UpdateVartotojas(Vartotojas instance);
     partial void DeleteVartotojas(Vartotojas instance);
     partial void InsertZaliava(Zaliava instance);
     partial void UpdateZaliava(Zaliava instance);
     partial void DeleteZaliava(Zaliava instance);
+    partial void InsertUzsakyma(Uzsakyma instance);
+    partial void UpdateUzsakyma(Uzsakyma instance);
+    partial void DeleteUzsakyma(Uzsakyma instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -71,14 +71,6 @@ namespace sguvs
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Uzsakymas> Uzsakymas
-		{
-			get
-			{
-				return this.GetTable<Uzsakymas>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Vartotojas> Vartotojas
 		{
 			get
@@ -94,352 +86,13 @@ namespace sguvs
 				return this.GetTable<Zaliava>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Uzsakymas")]
-	public partial class Uzsakymas : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_uzsakymo;
-		
-		private int _ID_vartotojo;
-		
-		private string _uzsakymo_ID;
-		
-		private int _ID_zaliava;
-		
-		private int _ilgis;
-		
-		private int _plotis;
-		
-		private int _kiekis;
-		
-		private double _plotas;
-		
-		private double _kaina;
-		
-		private bool _statusas;
-		
-		private EntitySet<Zaliava> _Zaliavas;
-		
-		private EntityRef<Vartotojas> _Vartotojas;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_uzsakymoChanging(int value);
-    partial void OnID_uzsakymoChanged();
-    partial void OnID_vartotojoChanging(int value);
-    partial void OnID_vartotojoChanged();
-    partial void Onuzsakymo_IDChanging(string value);
-    partial void Onuzsakymo_IDChanged();
-    partial void OnID_zaliavaChanging(int value);
-    partial void OnID_zaliavaChanged();
-    partial void OnilgisChanging(int value);
-    partial void OnilgisChanged();
-    partial void OnplotisChanging(int value);
-    partial void OnplotisChanged();
-    partial void OnkiekisChanging(int value);
-    partial void OnkiekisChanged();
-    partial void OnplotasChanging(double value);
-    partial void OnplotasChanged();
-    partial void OnkainaChanging(double value);
-    partial void OnkainaChanged();
-    partial void OnstatusasChanging(bool value);
-    partial void OnstatusasChanged();
-    #endregion
-		
-		public Uzsakymas()
-		{
-			this._Zaliavas = new EntitySet<Zaliava>(new Action<Zaliava>(this.attach_Zaliavas), new Action<Zaliava>(this.detach_Zaliavas));
-			this._Vartotojas = default(EntityRef<Vartotojas>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_uzsakymo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_uzsakymo
+		public System.Data.Linq.Table<Uzsakyma> Uzsakymas1
 		{
 			get
 			{
-				return this._ID_uzsakymo;
+				return this.GetTable<Uzsakyma>();
 			}
-			set
-			{
-				if ((this._ID_uzsakymo != value))
-				{
-					this.OnID_uzsakymoChanging(value);
-					this.SendPropertyChanging();
-					this._ID_uzsakymo = value;
-					this.SendPropertyChanged("ID_uzsakymo");
-					this.OnID_uzsakymoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_vartotojo", DbType="Int NOT NULL")]
-		public int ID_vartotojo
-		{
-			get
-			{
-				return this._ID_vartotojo;
-			}
-			set
-			{
-				if ((this._ID_vartotojo != value))
-				{
-					if (this._Vartotojas.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_vartotojoChanging(value);
-					this.SendPropertyChanging();
-					this._ID_vartotojo = value;
-					this.SendPropertyChanged("ID_vartotojo");
-					this.OnID_vartotojoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uzsakymo_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string uzsakymo_ID
-		{
-			get
-			{
-				return this._uzsakymo_ID;
-			}
-			set
-			{
-				if ((this._uzsakymo_ID != value))
-				{
-					this.Onuzsakymo_IDChanging(value);
-					this.SendPropertyChanging();
-					this._uzsakymo_ID = value;
-					this.SendPropertyChanged("uzsakymo_ID");
-					this.Onuzsakymo_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_zaliava", DbType="Int NOT NULL")]
-		public int ID_zaliava
-		{
-			get
-			{
-				return this._ID_zaliava;
-			}
-			set
-			{
-				if ((this._ID_zaliava != value))
-				{
-					this.OnID_zaliavaChanging(value);
-					this.SendPropertyChanging();
-					this._ID_zaliava = value;
-					this.SendPropertyChanged("ID_zaliava");
-					this.OnID_zaliavaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilgis", DbType="Int NOT NULL")]
-		public int ilgis
-		{
-			get
-			{
-				return this._ilgis;
-			}
-			set
-			{
-				if ((this._ilgis != value))
-				{
-					this.OnilgisChanging(value);
-					this.SendPropertyChanging();
-					this._ilgis = value;
-					this.SendPropertyChanged("ilgis");
-					this.OnilgisChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_plotis", DbType="Int NOT NULL")]
-		public int plotis
-		{
-			get
-			{
-				return this._plotis;
-			}
-			set
-			{
-				if ((this._plotis != value))
-				{
-					this.OnplotisChanging(value);
-					this.SendPropertyChanging();
-					this._plotis = value;
-					this.SendPropertyChanged("plotis");
-					this.OnplotisChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kiekis", DbType="Int NOT NULL")]
-		public int kiekis
-		{
-			get
-			{
-				return this._kiekis;
-			}
-			set
-			{
-				if ((this._kiekis != value))
-				{
-					this.OnkiekisChanging(value);
-					this.SendPropertyChanging();
-					this._kiekis = value;
-					this.SendPropertyChanged("kiekis");
-					this.OnkiekisChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_plotas", DbType="Float NOT NULL")]
-		public double plotas
-		{
-			get
-			{
-				return this._plotas;
-			}
-			set
-			{
-				if ((this._plotas != value))
-				{
-					this.OnplotasChanging(value);
-					this.SendPropertyChanging();
-					this._plotas = value;
-					this.SendPropertyChanged("plotas");
-					this.OnplotasChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kaina", DbType="Float NOT NULL")]
-		public double kaina
-		{
-			get
-			{
-				return this._kaina;
-			}
-			set
-			{
-				if ((this._kaina != value))
-				{
-					this.OnkainaChanging(value);
-					this.SendPropertyChanging();
-					this._kaina = value;
-					this.SendPropertyChanged("kaina");
-					this.OnkainaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_statusas", DbType="Bit NOT NULL")]
-		public bool statusas
-		{
-			get
-			{
-				return this._statusas;
-			}
-			set
-			{
-				if ((this._statusas != value))
-				{
-					this.OnstatusasChanging(value);
-					this.SendPropertyChanging();
-					this._statusas = value;
-					this.SendPropertyChanged("statusas");
-					this.OnstatusasChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Uzsakymas_Zaliava", Storage="_Zaliavas", ThisKey="ID_zaliava", OtherKey="ID_zaliava")]
-		public EntitySet<Zaliava> Zaliavas
-		{
-			get
-			{
-				return this._Zaliavas;
-			}
-			set
-			{
-				this._Zaliavas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vartotojas_Uzsakymas", Storage="_Vartotojas", ThisKey="ID_vartotojo", OtherKey="ID_vartotojo", IsForeignKey=true)]
-		public Vartotojas Vartotojas
-		{
-			get
-			{
-				return this._Vartotojas.Entity;
-			}
-			set
-			{
-				Vartotojas previousValue = this._Vartotojas.Entity;
-				if (((previousValue != value) 
-							|| (this._Vartotojas.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Vartotojas.Entity = null;
-						previousValue.Uzsakymas.Remove(this);
-					}
-					this._Vartotojas.Entity = value;
-					if ((value != null))
-					{
-						value.Uzsakymas.Add(this);
-						this._ID_vartotojo = value.ID_vartotojo;
-					}
-					else
-					{
-						this._ID_vartotojo = default(int);
-					}
-					this.SendPropertyChanged("Vartotojas");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Zaliavas(Zaliava entity)
-		{
-			this.SendPropertyChanging();
-			entity.Uzsakymas = this;
-		}
-		
-		private void detach_Zaliavas(Zaliava entity)
-		{
-			this.SendPropertyChanging();
-			entity.Uzsakymas = null;
 		}
 	}
 	
@@ -473,7 +126,7 @@ namespace sguvs
 		
 		private bool _istrintas;
 		
-		private EntitySet<Uzsakymas> _Uzsakymas;
+		private EntitySet<Uzsakyma> _Uzsakymas1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -507,7 +160,7 @@ namespace sguvs
 		
 		public Vartotojas()
 		{
-			this._Uzsakymas = new EntitySet<Uzsakymas>(new Action<Uzsakymas>(this.attach_Uzsakymas), new Action<Uzsakymas>(this.detach_Uzsakymas));
+			this._Uzsakymas1 = new EntitySet<Uzsakyma>(new Action<Uzsakyma>(this.attach_Uzsakymas1), new Action<Uzsakyma>(this.detach_Uzsakymas1));
 			OnCreated();
 		}
 		
@@ -751,16 +404,16 @@ namespace sguvs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vartotojas_Uzsakymas", Storage="_Uzsakymas", ThisKey="ID_vartotojo", OtherKey="ID_vartotojo")]
-		public EntitySet<Uzsakymas> Uzsakymas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vartotojas_Uzsakyma", Storage="_Uzsakymas1", ThisKey="ID_vartotojo", OtherKey="ID_vartotojo")]
+		public EntitySet<Uzsakyma> Uzsakymas1
 		{
 			get
 			{
-				return this._Uzsakymas;
+				return this._Uzsakymas1;
 			}
 			set
 			{
-				this._Uzsakymas.Assign(value);
+				this._Uzsakymas1.Assign(value);
 			}
 		}
 		
@@ -784,13 +437,13 @@ namespace sguvs
 			}
 		}
 		
-		private void attach_Uzsakymas(Uzsakymas entity)
+		private void attach_Uzsakymas1(Uzsakyma entity)
 		{
 			this.SendPropertyChanging();
 			entity.Vartotojas = this;
 		}
 		
-		private void detach_Uzsakymas(Uzsakymas entity)
+		private void detach_Uzsakymas1(Uzsakyma entity)
 		{
 			this.SendPropertyChanging();
 			entity.Vartotojas = null;
@@ -819,7 +472,7 @@ namespace sguvs
 		
 		private bool _istrintas;
 		
-		private EntityRef<Uzsakymas> _Uzsakymas;
+		private EntityRef<Uzsakyma> _Uzsakyma;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -845,7 +498,7 @@ namespace sguvs
 		
 		public Zaliava()
 		{
-			this._Uzsakymas = default(EntityRef<Uzsakymas>);
+			this._Uzsakyma = default(EntityRef<Uzsakyma>);
 			OnCreated();
 		}
 		
@@ -860,7 +513,7 @@ namespace sguvs
 			{
 				if ((this._ID_zaliava != value))
 				{
-					if (this._Uzsakymas.HasLoadedOrAssignedValue)
+					if (this._Uzsakyma.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1013,36 +666,387 @@ namespace sguvs
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Uzsakymas_Zaliava", Storage="_Uzsakymas", ThisKey="ID_zaliava", OtherKey="ID_zaliava", IsForeignKey=true)]
-		public Uzsakymas Uzsakymas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Uzsakyma_Zaliava", Storage="_Uzsakyma", ThisKey="ID_zaliava", OtherKey="ID_uzsakymo", IsForeignKey=true)]
+		public Uzsakyma Uzsakyma
 		{
 			get
 			{
-				return this._Uzsakymas.Entity;
+				return this._Uzsakyma.Entity;
 			}
 			set
 			{
-				Uzsakymas previousValue = this._Uzsakymas.Entity;
+				Uzsakyma previousValue = this._Uzsakyma.Entity;
 				if (((previousValue != value) 
-							|| (this._Uzsakymas.HasLoadedOrAssignedValue == false)))
+							|| (this._Uzsakyma.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Uzsakymas.Entity = null;
-						previousValue.Zaliavas.Remove(this);
+						this._Uzsakyma.Entity = null;
+						previousValue.Zaliava = null;
 					}
-					this._Uzsakymas.Entity = value;
+					this._Uzsakyma.Entity = value;
 					if ((value != null))
 					{
-						value.Zaliavas.Add(this);
-						this._ID_zaliava = value.ID_zaliava;
+						value.Zaliava = this;
+						this._ID_zaliava = value.ID_uzsakymo;
 					}
 					else
 					{
 						this._ID_zaliava = default(int);
 					}
-					this.SendPropertyChanged("Uzsakymas");
+					this.SendPropertyChanged("Uzsakyma");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Uzsakymas")]
+	public partial class Uzsakyma : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_uzsakymo;
+		
+		private int _ID_vartotojo;
+		
+		private string _uzsakymo_ID;
+		
+		private string _zaliava_ID;
+		
+		private int _ilgis;
+		
+		private int _plotis;
+		
+		private int _kiekis;
+		
+		private double _plotas;
+		
+		private double _kaina;
+		
+		private bool _statusas;
+		
+		private EntityRef<Zaliava> _Zaliava;
+		
+		private EntityRef<Vartotojas> _Vartotojas;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_uzsakymoChanging(int value);
+    partial void OnID_uzsakymoChanged();
+    partial void OnID_vartotojoChanging(int value);
+    partial void OnID_vartotojoChanged();
+    partial void Onuzsakymo_IDChanging(string value);
+    partial void Onuzsakymo_IDChanged();
+    partial void Onzaliava_IDChanging(string value);
+    partial void Onzaliava_IDChanged();
+    partial void OnilgisChanging(int value);
+    partial void OnilgisChanged();
+    partial void OnplotisChanging(int value);
+    partial void OnplotisChanged();
+    partial void OnkiekisChanging(int value);
+    partial void OnkiekisChanged();
+    partial void OnplotasChanging(double value);
+    partial void OnplotasChanged();
+    partial void OnkainaChanging(double value);
+    partial void OnkainaChanged();
+    partial void OnstatusasChanging(bool value);
+    partial void OnstatusasChanged();
+    #endregion
+		
+		public Uzsakyma()
+		{
+			this._Zaliava = default(EntityRef<Zaliava>);
+			this._Vartotojas = default(EntityRef<Vartotojas>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_uzsakymo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_uzsakymo
+		{
+			get
+			{
+				return this._ID_uzsakymo;
+			}
+			set
+			{
+				if ((this._ID_uzsakymo != value))
+				{
+					this.OnID_uzsakymoChanging(value);
+					this.SendPropertyChanging();
+					this._ID_uzsakymo = value;
+					this.SendPropertyChanged("ID_uzsakymo");
+					this.OnID_uzsakymoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_vartotojo", DbType="Int NOT NULL")]
+		public int ID_vartotojo
+		{
+			get
+			{
+				return this._ID_vartotojo;
+			}
+			set
+			{
+				if ((this._ID_vartotojo != value))
+				{
+					if (this._Vartotojas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_vartotojoChanging(value);
+					this.SendPropertyChanging();
+					this._ID_vartotojo = value;
+					this.SendPropertyChanged("ID_vartotojo");
+					this.OnID_vartotojoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uzsakymo_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string uzsakymo_ID
+		{
+			get
+			{
+				return this._uzsakymo_ID;
+			}
+			set
+			{
+				if ((this._uzsakymo_ID != value))
+				{
+					this.Onuzsakymo_IDChanging(value);
+					this.SendPropertyChanging();
+					this._uzsakymo_ID = value;
+					this.SendPropertyChanged("uzsakymo_ID");
+					this.Onuzsakymo_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zaliava_ID", DbType="VarChar(50)")]
+		public string zaliava_ID
+		{
+			get
+			{
+				return this._zaliava_ID;
+			}
+			set
+			{
+				if ((this._zaliava_ID != value))
+				{
+					this.Onzaliava_IDChanging(value);
+					this.SendPropertyChanging();
+					this._zaliava_ID = value;
+					this.SendPropertyChanged("zaliava_ID");
+					this.Onzaliava_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ilgis", DbType="Int NOT NULL")]
+		public int ilgis
+		{
+			get
+			{
+				return this._ilgis;
+			}
+			set
+			{
+				if ((this._ilgis != value))
+				{
+					this.OnilgisChanging(value);
+					this.SendPropertyChanging();
+					this._ilgis = value;
+					this.SendPropertyChanged("ilgis");
+					this.OnilgisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_plotis", DbType="Int NOT NULL")]
+		public int plotis
+		{
+			get
+			{
+				return this._plotis;
+			}
+			set
+			{
+				if ((this._plotis != value))
+				{
+					this.OnplotisChanging(value);
+					this.SendPropertyChanging();
+					this._plotis = value;
+					this.SendPropertyChanged("plotis");
+					this.OnplotisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kiekis", DbType="Int NOT NULL")]
+		public int kiekis
+		{
+			get
+			{
+				return this._kiekis;
+			}
+			set
+			{
+				if ((this._kiekis != value))
+				{
+					this.OnkiekisChanging(value);
+					this.SendPropertyChanging();
+					this._kiekis = value;
+					this.SendPropertyChanged("kiekis");
+					this.OnkiekisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_plotas", DbType="Float NOT NULL")]
+		public double plotas
+		{
+			get
+			{
+				return this._plotas;
+			}
+			set
+			{
+				if ((this._plotas != value))
+				{
+					this.OnplotasChanging(value);
+					this.SendPropertyChanging();
+					this._plotas = value;
+					this.SendPropertyChanged("plotas");
+					this.OnplotasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kaina", DbType="Float NOT NULL")]
+		public double kaina
+		{
+			get
+			{
+				return this._kaina;
+			}
+			set
+			{
+				if ((this._kaina != value))
+				{
+					this.OnkainaChanging(value);
+					this.SendPropertyChanging();
+					this._kaina = value;
+					this.SendPropertyChanged("kaina");
+					this.OnkainaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_statusas", DbType="Bit NOT NULL")]
+		public bool statusas
+		{
+			get
+			{
+				return this._statusas;
+			}
+			set
+			{
+				if ((this._statusas != value))
+				{
+					this.OnstatusasChanging(value);
+					this.SendPropertyChanging();
+					this._statusas = value;
+					this.SendPropertyChanged("statusas");
+					this.OnstatusasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Uzsakyma_Zaliava", Storage="_Zaliava", ThisKey="ID_uzsakymo", OtherKey="ID_zaliava", IsUnique=true, IsForeignKey=false)]
+		public Zaliava Zaliava
+		{
+			get
+			{
+				return this._Zaliava.Entity;
+			}
+			set
+			{
+				Zaliava previousValue = this._Zaliava.Entity;
+				if (((previousValue != value) 
+							|| (this._Zaliava.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Zaliava.Entity = null;
+						previousValue.Uzsakyma = null;
+					}
+					this._Zaliava.Entity = value;
+					if ((value != null))
+					{
+						value.Uzsakyma = this;
+					}
+					this.SendPropertyChanged("Zaliava");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vartotojas_Uzsakyma", Storage="_Vartotojas", ThisKey="ID_vartotojo", OtherKey="ID_vartotojo", IsForeignKey=true)]
+		public Vartotojas Vartotojas
+		{
+			get
+			{
+				return this._Vartotojas.Entity;
+			}
+			set
+			{
+				Vartotojas previousValue = this._Vartotojas.Entity;
+				if (((previousValue != value) 
+							|| (this._Vartotojas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Vartotojas.Entity = null;
+						previousValue.Uzsakymas1.Remove(this);
+					}
+					this._Vartotojas.Entity = value;
+					if ((value != null))
+					{
+						value.Uzsakymas1.Add(this);
+						this._ID_vartotojo = value.ID_vartotojo;
+					}
+					else
+					{
+						this._ID_vartotojo = default(int);
+					}
+					this.SendPropertyChanged("Vartotojas");
 				}
 			}
 		}

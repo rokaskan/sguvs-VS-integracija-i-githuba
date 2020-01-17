@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StikloNamaiDBDataSet" targetNamespace="http://tempuri.org/StikloNamaiDBDataSet.xsd" xmlns:mstns="http://tempuri.org/StikloNamaiDBDataSet.xsd" xmlns="http://tempuri.org/StikloNamaiDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="StikloNamaiDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="StikloNamaiDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.sguvs.Properties.Settings.GlobalReference.Default.StikloNamaiDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VartotojasTableAdapter" GeneratorDataComponentClassName="VartotojasTableAdapter" Name="Vartotojas" UserDataComponentName="VartotojasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StikloNamaiDBConnectionString (Settings)" DbObjectName="dbo.Vartotojas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT vartotojo_ID, slaptazodis1, slaptazodis2 FROM dbo.Vartotojas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="vartotojo_ID" DataSetColumn="vartotojo_ID" />
+              <Mapping SourceColumn="slaptazodis1" DataSetColumn="slaptazodis1" />
+              <Mapping SourceColumn="slaptazodis2" DataSetColumn="slaptazodis2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="StikloNamaiDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="StikloNamaiDBDataSet" msprop:Generator_UserDSName="StikloNamaiDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vartotojas" msprop:Generator_TableClassName="VartotojasDataTable" msprop:Generator_TableVarName="tableVartotojas" msprop:Generator_TablePropName="Vartotojas" msprop:Generator_RowDeletingName="VartotojasRowDeleting" msprop:Generator_RowChangingName="VartotojasRowChanging" msprop:Generator_RowEvHandlerName="VartotojasRowChangeEventHandler" msprop:Generator_RowDeletedName="VartotojasRowDeleted" msprop:Generator_UserTableName="Vartotojas" msprop:Generator_RowChangedName="VartotojasRowChanged" msprop:Generator_RowEvArgName="VartotojasRowChangeEvent" msprop:Generator_RowClassName="VartotojasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vartotojo_ID" msprop:Generator_ColumnVarNameInTable="columnvartotojo_ID" msprop:Generator_ColumnPropNameInRow="vartotojo_ID" msprop:Generator_ColumnPropNameInTable="vartotojo_IDColumn" msprop:Generator_UserColumnName="vartotojo_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="slaptazodis1" msprop:Generator_ColumnVarNameInTable="columnslaptazodis1" msprop:Generator_ColumnPropNameInRow="slaptazodis1" msprop:Generator_ColumnPropNameInTable="slaptazodis1Column" msprop:Generator_UserColumnName="slaptazodis1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="slaptazodis2" msprop:Generator_ColumnVarNameInTable="columnslaptazodis2" msprop:Generator_ColumnPropNameInRow="slaptazodis2" msprop:Generator_ColumnPropNameInTable="slaptazodis2Column" msprop:Generator_UserColumnName="slaptazodis2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
